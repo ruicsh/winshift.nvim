@@ -5,6 +5,7 @@ local M = {}
 M.defaults = {
   highlight_moving_win = true,
   focused_hl_group = "Visual",
+  window_picker_hl_group = "StatusLineNC",
   moving_win_options = {
     wrap = false,
     cursorline = false,
