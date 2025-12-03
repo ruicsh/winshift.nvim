@@ -82,6 +82,14 @@ Example configuration with default settings:
           filter_func = nil,
         })
       end,
+      ---A function to be called after swapping windows.
+      ---
+      ---This callback is invoked after a successful window swap operation.
+      ---@param swapped_wins table # Table containing the swapped window IDs: {win1 = integer, win2 = integer}
+      after_swap = function(swapped_wins)
+        -- Example: Print a message when windows are swapped
+        print(string.format("Swapped windows %d and %d", swapped_wins.win1, swapped_wins.win2))
+      end,
     })
 <
 
