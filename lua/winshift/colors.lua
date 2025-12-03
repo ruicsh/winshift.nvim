@@ -171,6 +171,8 @@ function M.get_hl_groups()
     or (M.get_bg({ hl_focused, "Normal" }) or "white")
   local fg_focused = reverse and (M.get_bg({ hl_focused, "Normal" }) or "black") or nil
 
+  local hl_window_picker = config.get_config().window_picker_hl_group
+
   return {
     Normal = { fg = fg_focused, bg = bg_focused },
     EndOfBuffer = { fg = bg_focused, bg = bg_focused },
@@ -178,7 +180,7 @@ function M.get_hl_groups()
     CursorLineNr = { fg = M.get_fg("CursorLineNr"), bg = bg_focused, gui = M.get_gui("CursorLineNr") },
     SignColumn = { fg = M.get_fg("SignColumn"), bg = bg_focused },
     FoldColumn = { fg = M.get_fg("FoldColumn"), bg = bg_focused },
-    WindowPicker = { fg = "#ededed", bg = "#4493c8", ctermfg = 255, ctermbg = 33, gui = "bold" },
+    WindowPicker = { fg = M.get_fg(hl_window_picker), bg = M.get_bg(hl_window_picker), gui = M.get_gui(hl_window_picker) },
   }
 end
 

@@ -41,6 +41,7 @@ use 'sindrets/winshift.nvim'
 require("winshift").setup({
   highlight_moving_win = true,  -- Highlight the window being moved
   focused_hl_group = "Visual",  -- The highlight group used for the moving window
+  window_picker_hl_group = "StatusLineNC"  -- The highlight group used for the target windows
   moving_win_options = {
     -- These are local options applied to the moving window while it's
     -- being moved. They are unset when you leave Win-Move mode.
