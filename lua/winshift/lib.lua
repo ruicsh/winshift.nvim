@@ -117,6 +117,12 @@ function M.swap_leaves(a, b)
   vim.fn.win_splitmove(b.winid, temp_a, opt_a)
   api.nvim_win_close(temp_a, true)
   api.nvim_win_close(temp_b, true)
+
+  -- Call the swap callback if it exists
+  local conf = config.get_config()
+  if conf.after_swap then
+    conf.after_swap({ win1 = a.winid, win2 = b.winid })
+  end
 end
 
 ---Move a row into a target window, replacing the target.

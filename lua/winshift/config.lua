@@ -54,6 +54,11 @@ M.defaults = {
       filter_func = nil,
     })
   end,
+  ---A function to be called after swapping windows.
+  ---
+  ---This callback is invoked after a successful window swap operation.
+  ---@param swapped_wins table # Table containing the swapped window IDs: {win1 = integer, win2 = integer}
+  after_swap = nil,
 }
 -- stylua: ignore end
 
